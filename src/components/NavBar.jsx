@@ -22,6 +22,9 @@ export default function NavBar() {
             <NavLink to={link.path}>{link.title}</NavLink>
           </li>
         ))}
+        <button type="button" class="btn btn-success">
+          Budget Mode
+        </button>
       </ul>
     </>
   );
