@@ -5,27 +5,21 @@ import Products from "./pages/Products";
 import DefaultLayout from "./layouts/DefaultLayout";
 import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
-import { createContext } from "react";
-import { useState } from "react";
 
 function App() {
-  const [budgetMode, setBudgetMode] = useState();
-  const BudgetContext = createContext();
   return (
     <>
-      <BudgetContext.Provider>
-        <BrowserRouter>
-          <Routes>
-            <Route element={<DefaultLayout />}>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about-us" element={<AboutUs />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/products/:id" element={<ProductDetail />} />
-              <Route path="*" element={<NotFound />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </BudgetContext.Provider>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaultLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
